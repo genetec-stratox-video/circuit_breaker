@@ -347,8 +347,8 @@ do_info(R, Acc) ->
   {Errors, _}       = get_data(R, error),
   {Timeouts, _}     = get_data(R, timeout),
   {CallTimeouts, _} = get_data(R, call_timeout),
-  Formatted = format(Service, Status, integer_to_list(Errors),
-                     integer_to_list(Timeouts), integer_to_list(CallTimeouts)),
+  Formatted         = format(Service, Status, integer_to_list(Errors),
+                             integer_to_list(Timeouts), integer_to_list(CallTimeouts)),
   [Formatted | Acc].
 
 fmt_flags(0) -> [pif(?CIRCUIT_BREAKER_OK)];
